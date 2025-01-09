@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1 class="text-3xl font-bold underline">
-    Hello world!
+    Selamat Datang di Aplikasi TopUp Game
   </h1>
 </body>
 </html>
