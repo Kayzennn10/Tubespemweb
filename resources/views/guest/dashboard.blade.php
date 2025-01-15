@@ -116,7 +116,7 @@
                             </li>
                             @endforeach
                         </ul>
-                        <a href="">Top Up Now</a>
+                        <a href="{{route('transaksi.create')}}">Top Up Now</a>
                     </div>
                 </div>
                 @endforeach
