@@ -27,7 +27,7 @@
                 <tr class="border-b hover:bg-gray-50">
                     <td class="py-2 px-4">{{ $loop->iteration }}</td>
                     <td class="py-2 px-4">{{ $transaksi->game->name }}</td>
-                    <td class="py-2 px-4">{{ $transaksi->username }}</td>
+                    <td class="py-2 px-4">{{ $transaksi->user->name ?? 'unknown' }}</td>
                     <td class="py-2 px-4">Rp{{ number_format($transaksi->amount, 0, ',', '.') }}</td>
                     <td class="py-2 px-4">
                         <span class="px-2 py-1 rounded-lg text-sm {{ $transaksi->status == 'Completed' ? 'bg-green-100 text-green-600' : 'bg-yellow-100 text-yellow-600' }}">

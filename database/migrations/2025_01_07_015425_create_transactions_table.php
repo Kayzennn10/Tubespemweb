@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->uuid('user_id');
-            $table->uuid('game_id');
-            $table->uuid('currency_id');
+            $table->integer('id')->primary();
+            $table->integer('user_id');
+            $table->integer('game_id');
+            $table->integer('currency_id');
             $table->integer('amount');
             $table->decimal('total_price', 10, 2);
             $table->enum('status', ['pending', 'completed', 'failed'])->default('pending');

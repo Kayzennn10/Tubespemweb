@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('game_currencies', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->uuid('game_id');
+            $table->integer('id')->primary();
+            $table->integer('game_id');
             $table->string('currency_name');
             $table->decimal('price', 10, 2);
             $table->text('description')->nullable();

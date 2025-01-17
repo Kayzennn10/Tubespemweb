@@ -11,22 +11,12 @@ use Illuminate\Support\Str;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-    // Set key type to UUID
-    protected $keyType = 'string';
 
-    // Set auto incrementing to false (karena UUID tidak auto increment)
-    public $incrementing = false;
+    // Kembali ke pengaturan default (INT dengan auto-increment)
+    protected $keyType = 'int';
+    public $incrementing = true;
 
-    // Automatically generate UUID on creating a new record
-    protected static function booted()
-    {
-        static::creating(function ($user) {
-            if (!$user->id) {
-                $user->id = (string) Str::uuid(); // Generate UUID
-            }
-        });
-    }
-
+    // Define fillable attributes
     protected $fillable = [
         'name',
         'email',
@@ -35,11 +25,13 @@ class User extends Authenticatable
         'role',
     ];
 
+    // Hidden attributes for serialization
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
+    // Relationship with transactions
     public function transactions()
     {
         return $this->hasMany(Transaction::class);

@@ -37,5 +37,12 @@
             @endforeach
         </ul>
     </div>
+
+    <!-- Button to Go to Transactions -->
+    <div class="mt-8">
+        <a href="{{ route('transaksi.index') }}" class="inline-block bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-yellow-400 transition duration-300">
+            Go to Transactions
+        </a>
+    </div>
 </div>
 @endsection
